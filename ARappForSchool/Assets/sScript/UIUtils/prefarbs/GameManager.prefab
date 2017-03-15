@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1236136036446416}
+  m_IsPrefabParent: 1
+--- !u!1 &1236136036446416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4922428915217732}
+  - component: {fileID: 114270082076931326}
+  - component: {fileID: 114304558484916952}
+  - component: {fileID: 114080548308338620}
+  - component: {fileID: 114622129037173758}
+  - component: {fileID: 114519639040096416}
+  - component: {fileID: 114494449507202604}
+  m_Layer: 10
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4922428915217732
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1236136036446416}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114080548308338620
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1236136036446416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32a018ea7cc1c524ba16e0d470cf13c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114270082076931326
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1236136036446416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04fedb70480ca634b86df6038e12fe0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 1
+  anims: {fileID: 114080548308338620}
+  textManager: {fileID: 0}
+  anchors: {fileID: 0}
+  buttonsManager: {fileID: 0}
+  objectToManipulate: {fileID: 0}
+  desiredTime: 0
+--- !u!114 &114304558484916952
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1236136036446416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b824d2ceb46fa447a1bf82145ad0562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anchs:
+  - id: leftSideAnch
+    objc: {fileID: 0}
+  - id: rightSideAnch
+    objc: {fileID: 0}
+  - id: aboveTopAnch
+    objc: {fileID: 0}
+  - id: UnderBottom
+    objc: {fileID: 0}
+  - id: textPosAnch
+    objc: {fileID: 0}
+--- !u!114 &114494449507202604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1236136036446416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc5fd06f9546e224fa01d777ef7e638f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fManager: {fileID: 0}
+  Buttons:
+  - {fileID: 0}
+  - {fileID: 0}
+  actualTime: 0
+--- !u!114 &114519639040096416
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1236136036446416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2475f5fb70b2b94289b2521a9584ed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114622129037173758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1236136036446416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa50221d1d7e72b489b090e8f37daa1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}
+  fManager: {fileID: 114519639040096416}
+  actualTime: 0
