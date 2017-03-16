@@ -1,0 +1,236 @@
+
+body{
+margin:0;
+	background:url(http://phandroid.s3.amazonaws.com/wp-content/uploads/2014/06/forest-patrol.jpg) ;
+		background-size:100%;
+		background-repeat:no repeat;
+		
+}
+#home{
+	margin-top:220px;
+	margin-left:320px;
+	text-align:center;
+	width:700px;
+	height:300px;
+
+	
+}
+.sitebottom{
+	margin-top:120px;
+	margin-left:320px;
+	text-align:center;
+	width:700px;
+	height:300px;
+
+	
+}
+#box{
+		margin-left:90px;
+	width:550px;
+	height:120px;
+		transition-duration:2s;
+	transition-timing-function:2s;
+	border:6px solid white;
+}
+#box:hover{
+		margin-left:90px;
+	width:550px;
+	height:120px;
+	background:black;
+	color:white;
+
+	border:6px solid white;
+}
+span.home{
+	font-size:98px;
+	color:white;
+	font-weight:800;
+}
+span.bottom{
+	font-size:19px;
+	color:#FBFBFB;
+	letter-spacing:2px;
+	font-weight:800;
+}
+.menu{
+	width:100%;
+	height:45px;
+	background:black;
+	
+}
+
+.list{
+padding:0 15px;
+margin-left:5px;
+float:left;
+color:white;
+padding-top:12px;
+transition-duration:0.2s;
+transition-timing-function:2s;
+height:90%;
+min-width:2%;
+max-width:12%;
+top:2px;	
+	
+}
+
+.logo{
+	color:white;
+	font-size:24px;
+	font-weight:600;
+padding-top:10px;
+margin-left:15px;
+height:90%;
+float:left;
+width:100px;
+top:2px;	
+	
+}
+.logo:hover{
+text-shadow: -1px -1px 11px rgba(150, 150, 150, 1);}
+	
+.list:hover{
+padding:0 15px;
+height:90%;
+padding-top:16px;
+border-bottom:1px solid cyan;
+transition-timing-function:linear;
+
+background:white;
+color:black;
+	
+}
+
+.special{
+padding:0 15px;
+float:left;
+color:white;
+font-weight:600;
+padding-top:10px;
+font-size:17px;
+background:#38B0DE;
+height:90%;
+min-width:60px;
+max-width:250px;
+top:2px;	
+	
+}
+.mini{
+	color:white;
+	padding:0 15px;
+	border:1px solid white;
+	float:left;
+		transition-duration:0.5s;
+	
+}
+.mini:hover{
+	color:#38B0DE;
+	padding:0 15px;
+	
+	border:1px solid white;
+	float:left;
+
+	
+}
+.homesite{
+	margin:0;
+	width:100%;
+}
+.sitebox{
+	margin-top:20px;
+
+	margin-left:4%;
+	width:17%;
+	float:left;
+	background:#B3BAC2;
+	text-align:center;
+	border-radius:2px;
+	color:black;
+	font-size:30px;
+	padding:0 15px;
+	height:70%;
+	font-size:20px;
+	transition-duration:0.5s;
+	border:1px solid gray;
+	
+}
+.sitebox:hover{
+	margin-top:20px;
+	margin-left:4%;
+	width:17%;
+	opacity:0.8;
+	box-shadow:2px 2px black;
+	float:left;
+	-webkit-box-shadow: -1px 3px 36px 3px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 3px 36px 3px rgba(0,0,0,0.75);
+box-shadow: -1px 3px 36px 3px rgba(0,0,0,0.75);
+	background:#38B0DE;
+	height:70%;
+	border:1px solid gray;
+	
+}
+h1.global{
+	
+     border-bottom:1px solid black;
+	 text-align:center;
+	 font-weight:500;
+	 padding-top:15px;
+	 font-size:30px;
+	 margin:0;
+	 font-family:arial;
+	 width:300px;
+}
+h1.wow{
+	margin:0;
+	margin-top:10px;
+	color:white;
+	font-size:29px;
+	
+}
+.start{
+	margin-top:100px;
+	margin-left:420px;
+	
+}
+
+input.login{
+	width:270px;
+	height:35px;
+	
+}
+
+
+input.login:hover{
+	width:270px;
+	height:35px;
+	border:1px solid blue;
+	
+}
+input.login:focus{
+	width:250px;outline:none;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:1px solid black;
+	height:30px;
+	
+}
+.contact{
+	 float:left;
+	 height:100%;
+	 font-size:23px; 
+	 color:white;
+	 text-align:center;
+	 padding-top:12px;
+	
+}
+	.avatar{
+		margin-left:20px;
+		margin-top:15px;
+		width:200px; 
+		height:200px;
+		border:1px solid black;
+		border-radius:123px;
+	
+		
+	}
