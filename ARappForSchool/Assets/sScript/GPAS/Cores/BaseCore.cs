@@ -5,5 +5,5 @@
 public class BaseCore : MonoBehaviour {
     public string ID = "";
     public GPASCore core;
-    virtual public void init() { }
+    public void init(GPASCore cr) { if (cr != null) { core = cr; } }
 }

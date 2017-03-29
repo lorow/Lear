@@ -23,7 +23,6 @@ public class GPASCore : MonoBehaviour {
     }
 
     public List<BaseCore> cores;
-
     private void Awake()
     {
         if (p_instance == null)
@@ -38,12 +37,20 @@ public class GPASCore : MonoBehaviour {
             if (this != p_instance)
                 Destroy(this.gameObject);
         }
-        //prepare already choosen cores by passing to them reference to this
+        prepareCores();
     }
 
     void sortCores()
     {
         cores.Sort((x, y) => x.ID.CompareTo(y.ID));
+    }
+
+    void prepareCores()
+    {
+        int L = cores.Count;
+        for (int i = 0; i < L; i++)
+            cores[i].init(this);
+        sortCores();
     }
     public void AppendCore(BaseCore core )
     {
