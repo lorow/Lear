@@ -9,7 +9,7 @@ float scaleFactor = 0;
 
 Touch touchZero;
 Touch touchOne;
-	void Update () 
+	void controllDragging() 
 	{
 		if (Input.touchCount >= 0)
 		{

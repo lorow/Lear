@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: LiberationSans SDF Material
   m_Shader: {fileID: 4800000, guid: cafd18099dfc0114896e0a8b277b81b6, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: OUTLINE_ON
   m_LightmapFlags: 5
   m_CustomRenderQueue: 3000
   stringTagMap: {}
@@ -111,7 +111,7 @@ Material:
       second: 0
     - first:
         name: _OutlineSoftness
-      second: 0.005
+      second: 0
     - first:
         name: _OutlineUVSpeedX
       second: 0
@@ -120,7 +120,7 @@ Material:
       second: 0
     - first:
         name: _OutlineWidth
-      second: 0.142
+      second: 0.052
     - first:
         name: _PerspectiveFilter
       second: 0.593
@@ -211,7 +211,7 @@ Material:
       second: {r: 0, g: 0, b: 32767, a: 32767}
     - first:
         name: _OutlineColor
-      second: {r: 0, g: 0, b: 0, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _ReflectFaceColor
       second: {r: 0, g: 0, b: 0, a: 1}
