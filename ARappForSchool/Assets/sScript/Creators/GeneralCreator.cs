@@ -14,22 +14,74 @@
 /// but first, write those fucking managers and this parser
 /// </summary>
 
-public class GeneralCreator : MonoBehaviour {
-
-
-
-    public RectTransform prefarb;
-    public RectTransform content;
-    public RectTransform clone;
+public class GeneralCreator : MonoBehaviour
+{
+    //public RectTransform prefarb;
+    //public RectTransform content;
+    //public RectTransform clone;
     //based on input from json
+    //private void Start()
+    //{
+    //for (int i = 0; i < 5; i++)
+    //{
+    //  clone = Instantiate(prefarb, content);
+    //    clone.transform.localScale = new Vector3(1, 1, 1);
+    //      clone.GetComponent<FriendsManager>().handleContent("T");
+    //    }
+    //      clone.GetComponent<FriendsManager>().hasContent();
+    //    }
+
+    public JSONParser jparser;
+
+    #region managers
+    public NwesManager news;
+    public FriendsManager friends;
+    #endregion
+    private RectTransform pl;
+    // here will be network manager
+    #region prefarbs
+    public RectTransform newsPrefarb;
+    public RectTransform friendsPrefarb;
+    #endregion
+
+    public RectTransform clone;
+
+    string type;
     private void Start()
     {
-        for (int i = 0; i < 5; i++)
+        type = jparser.getType();
+        switch(type)
         {
-            clone = Instantiate(prefarb, content);
-            clone.transform.localScale = new Vector3(1, 1, 1);
-            clone.GetComponent<FriendsManager>().handleContent("T");
+            case "Friends":
+                handleFriends();
+                break;
+            case "News":
+                handleNews();
+                break;
+            case "Courses":
+                handleCourses();
+                break;
+            case "Ranking":
+                handleRanking();
+                break;
         }
-        clone.GetComponent<FriendsManager>().hasContent();
+    }
+
+    private void handleFriends()
+    {
+
+    }
+    private void handleCourses()
+    {
+
+    }
+    private void handleNews()
+    {
+
+    }
+    private void handleRanking()
+    {
+
     }
 }
+
