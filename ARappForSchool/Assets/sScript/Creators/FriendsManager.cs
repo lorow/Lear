@@ -16,7 +16,7 @@ public class FriendsManager : MonoBehaviour {
     [SerializeField]
     private RectTransform emptyMessange;
 
-    public void handleContent(string Name,string PC = "00", string FCC = "00", string DSLC = "00", RawImage pp = null)
+    public void handleContent(string Name,string PC = "00", string FCC = "00", string DSLC = "00", Texture pp = null)
     {
         setName(Name);
         setPointsCount(PC);
@@ -50,8 +50,8 @@ public class FriendsManager : MonoBehaviour {
         if (DSL!= null)
             DSLCount.text = DSL;
     }
-    private void setPP(RawImage PP)
+    private void setPP(Texture PP)
     {
-           profilePic = PP;
+           profilePic.texture = PP;
     }
 }

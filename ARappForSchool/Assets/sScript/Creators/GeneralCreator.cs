@@ -36,6 +36,7 @@ public class GeneralCreator : MonoBehaviour
     #region managers
     public NwesManager news;
     public FriendsManager friends;
+    public CourseManager courses;
     #endregion
     private RectTransform pl;
     // here will be network manager
@@ -44,12 +45,18 @@ public class GeneralCreator : MonoBehaviour
     public RectTransform friendsPrefarb;
     #endregion
 
+    #region contents
+    public RectTransform newsContent;
+    public RectTransform friendsContent;
+    #endregion
+
     public RectTransform clone;
 
-    string type;
+    string type = "Friends";
     private void Start()
     {
-        type = jparser.getType();
+        //debug
+        //type = jparser.getType();
         switch(type)
         {
             case "Friends":
@@ -69,15 +76,37 @@ public class GeneralCreator : MonoBehaviour
 
     private void handleFriends()
     {
-
+        int amount = jparser.getAmount();
+        //create that much clones;
+        for(int i = 0; i < amount; i++)
+        {
+            clone = Instantiate(friendsPrefarb, friendsContent);
+            clone.transform.localScale = new Vector3(1, 1, 1);
+            friends = clone.GetComponent<FriendsManager>();
+            friends.handleContent("test");
+        }
+        friends.hasContent();
     }
     private void handleCourses()
     {
-
+        int amount = jparser.getAmount();
+        for (int i = 0; i < amount; i++)
+        {
+            courses.handleContent("test");
+        }
     }
     private void handleNews()
     {
 
+        int amount = jparser.getAmount();
+        for (int i = 0; i < amount; i++)
+        {
+            clone = Instantiate(newsPrefarb, newsContent);
+            clone.transform.localScale = new Vector3(1, 1, 1);
+            news = clone.GetComponent<NwesManager>();
+            news.handleContent("awd", "wadawd");
+        }
+        news.hasContent();
     }
     private void handleRanking()
     {

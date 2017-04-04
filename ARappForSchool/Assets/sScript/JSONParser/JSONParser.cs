@@ -40,10 +40,16 @@ public class JSONParser : MonoBehaviour {
         JSONParsed = JSON.Parse(json); // parsed object
     }
 
-    public string getType( )
+    public string getType()
     {
-        string type = JSONParsed["Type"].Value;
-      return "";
+        return JSONParsed["Type"].Value; ;
+    }
+
+    public int getAmount()
+    {
+        //return JSONParsed["amount"].AsInt;
+        //debuging
+        return 5;
     }
 
     public string getName()
