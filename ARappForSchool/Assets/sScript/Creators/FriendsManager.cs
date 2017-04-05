@@ -14,7 +14,7 @@ public class FriendsManager : MonoBehaviour {
     [SerializeField]
     private RawImage profilePic;
     [SerializeField]
-    private RectTransform emptyMessange;
+    private GameObject emptyMessange;
 
     public void handleContent(string Name,string PC = "00", string FCC = "00", string DSLC = "00", Texture pp = null)
     {
@@ -24,10 +24,11 @@ public class FriendsManager : MonoBehaviour {
         setDSL(DSLC);
         setPP(pp);
     }
-    public void hasContent()
+    public void hasContent(GameObject empty)
     {
-        emptyMessange = GameObject.FindGameObjectWithTag("FriendEmpty").GetComponent<RectTransform>();
-        emptyMessange.gameObject.SetActive(false);
+        if (empty != null)
+            emptyMessange = empty;
+        emptyMessange.SetActive(false);
     }
     
     private void setName(string n)

@@ -23,15 +23,19 @@ public class CourseManager : MonoBehaviour {
     {
         if(checkIfFull())
         {
-            //create row and the first course
+          //create row and the first course
             currentRow = Instantiate(rowPrefarb, content);
+            currentRow.transform.localScale = new Vector3(1, 1, 1);
+
             courseClone = Instantiate(coursePrefarb, currentRow);
+            courseClone.transform.localScale = new Vector3(0.95f, 1, 1);
             //handle it
             handleCourse(title, tex);
         }
         else
         {
             courseClone = Instantiate(coursePrefarb, currentRow);
+            courseClone.transform.localScale = new Vector3(0.95f, 1, 1);
             handleCourse(title, tex);
         }
     }
@@ -52,8 +56,5 @@ public class CourseManager : MonoBehaviour {
         course = courseClone.GetComponent<singleCourse>();
         course.setTitle(title);
         course.setBackground(tex);
-
     }
-
-
 }

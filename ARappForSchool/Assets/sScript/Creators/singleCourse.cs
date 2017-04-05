@@ -7,7 +7,7 @@ public class singleCourse : MonoBehaviour {
     private TextMeshProUGUI title;
     [SerializeField]
     private RawImage background;
-
+    
     public void setTitle(string T)
     {
         if (T != null)

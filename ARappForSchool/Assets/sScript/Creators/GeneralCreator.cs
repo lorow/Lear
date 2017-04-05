@@ -4,33 +4,16 @@
 /// how to do it properly: solution by tired mind to fresh morning mind!
 /// 
 /// 1. delete all this junk
-/// 2. write json parses
+/// 2. write json parser
 /// 3. add reference to it here
 /// 4. add all possible managers here 
 /// 5. ask parser for type
 /// 6. based on the answear, decide which manager to use
 /// 7. use it
-/// 
-/// but first, write those fucking managers and this parser
 /// </summary>
 
 public class GeneralCreator : MonoBehaviour
 {
-    //public RectTransform prefarb;
-    //public RectTransform content;
-    //public RectTransform clone;
-    //based on input from json
-    //private void Start()
-    //{
-    //for (int i = 0; i < 5; i++)
-    //{
-    //  clone = Instantiate(prefarb, content);
-    //    clone.transform.localScale = new Vector3(1, 1, 1);
-    //      clone.GetComponent<FriendsManager>().handleContent("T");
-    //    }
-    //      clone.GetComponent<FriendsManager>().hasContent();
-    //    }
-
     public JSONParser jparser;
 
     #region managers
@@ -52,7 +35,10 @@ public class GeneralCreator : MonoBehaviour
 
     public RectTransform clone;
 
-    string type = "Friends";
+    public GameObject FriendsEmpty;
+    public GameObject NewsEmpty;
+
+    string type = "Courses";
     private void Start()
     {
         //debug
@@ -85,7 +71,7 @@ public class GeneralCreator : MonoBehaviour
             friends = clone.GetComponent<FriendsManager>();
             friends.handleContent("test");
         }
-        friends.hasContent();
+        friends.hasContent(FriendsEmpty);
     }
     private void handleCourses()
     {
@@ -106,7 +92,7 @@ public class GeneralCreator : MonoBehaviour
             news = clone.GetComponent<NwesManager>();
             news.handleContent("awd", "wadawd");
         }
-        news.hasContent();
+        news.hasContent(NewsEmpty);
     }
     private void handleRanking()
     {

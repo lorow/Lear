@@ -11,7 +11,7 @@ public class NwesManager : MonoBehaviour {
     [SerializeField]
     private TextMeshProUGUI commentCount;
     [SerializeField]
-    private RectTransform emptyMesaange;
+    private GameObject emptyMesaange;
 
     public string shorted = "";
 
@@ -22,10 +22,11 @@ public class NwesManager : MonoBehaviour {
         setKarmaCount(karmaCou);
         setCommentCount(commentCou);
     }
-    public void hasContent()
-    {
-        emptyMesaange = GameObject.FindGameObjectWithTag("NewsEmpty").GetComponent<RectTransform>();
-        emptyMesaange.gameObject.SetActive(false);
+    public void hasContent(GameObject empty)
+    {   
+        if(empty != null)
+            emptyMesaange = empty;
+        emptyMesaange.SetActive(false);
     }
 
     private void setTitle(string title)
