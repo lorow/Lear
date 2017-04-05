@@ -10,6 +10,8 @@ TagManager:
   - MainMenu
   - Credits
   - settings
+  - NewsEmpty
+  - FriendEmpty
   layers:
   - Default
   - TransparentFX
