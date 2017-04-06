@@ -14,8 +14,6 @@
 
 public class GeneralCreator : MonoBehaviour
 {
-    public JSONParser jparser;
-
     #region managers
     public NwesManager news;
     public FriendsManager friends;
@@ -38,63 +36,38 @@ public class GeneralCreator : MonoBehaviour
     public GameObject FriendsEmpty;
     public GameObject NewsEmpty;
 
-    string type = "Courses";
-    private void Start()
-    {
-        //debug
-        //type = jparser.getType();
-        switch(type)
-        {
-            case "Friends":
-                handleFriends();
-                break;
-            case "News":
-                handleNews();
-                break;
-            case "Courses":
-                handleCourses();
-                break;
-            case "Ranking":
-                handleRanking();
-                break;
-        }
-    }
 
-    private void handleFriends()
+    public void handleFriends(int amount,string Name, string PC = "00", string FCC = "00", string DSLC = "00", Texture pp = null)
     {
-        int amount = jparser.getAmount();
         //create that much clones;
         for(int i = 0; i < amount; i++)
         {
             clone = Instantiate(friendsPrefarb, friendsContent);
             clone.transform.localScale = new Vector3(1, 1, 1);
             friends = clone.GetComponent<FriendsManager>();
-            friends.handleContent("test");
+            friends.handleContent(Name, PC, FCC, DSLC, pp);
         }
         friends.hasContent(FriendsEmpty);
     }
-    private void handleCourses()
+    public void handleCourses(int amount,string title, Texture tex = null)
     {
-        int amount = jparser.getAmount();
         for (int i = 0; i < amount; i++)
         {
-            courses.handleContent("test");
+            courses.handleContent(title,tex);
         }
     }
-    private void handleNews()
+    public void handleNews(int amount,string title, string content, int karmaCou = 0, int commentCou = 0)
     {
-
-        int amount = jparser.getAmount();
         for (int i = 0; i < amount; i++)
         {
             clone = Instantiate(newsPrefarb, newsContent);
             clone.transform.localScale = new Vector3(1, 1, 1);
             news = clone.GetComponent<NwesManager>();
-            news.handleContent("awd", "wadawd");
+            news.handleContent(title, content, karmaCou, commentCou);
         }
         news.hasContent(NewsEmpty);
     }
-    private void handleRanking()
+    public void handleRanking()
     {
 
     }

@@ -35,6 +35,13 @@ public class JSONParser : MonoBehaviour {
     private JSONNode JSONParsed;
     public JSONNode NodeToSerialize;
 
+    private string initialJson = "{}";
+
+    public void init()
+    {
+        NodeToSerialize = JSON.Parse(initialJson);
+    }
+
     public void deserialize(string json)
     {
         JSONParsed = JSON.Parse(json); // parsed object
@@ -47,9 +54,7 @@ public class JSONParser : MonoBehaviour {
 
     public int getAmount()
     {
-        //return JSONParsed["amount"].AsInt;
-        //debuging
-        return 5;
+        return JSONParsed["amount"].AsInt;
     }
 
     public string getName()
@@ -66,11 +71,23 @@ public class JSONParser : MonoBehaviour {
     {
         return JSONParsed[data].AsInt;
     }
+    public int getDataAsIntFromChild(string child,string data)
+    {
+        return JSONParsed[child][data].AsInt;
+    }
     public string getDataAsString(string data)
     {
         return JSONParsed[data].Value;
     }
+    public string getDataAsStringFromChild(string child,string data)
+    {
+        return JSONParsed[child][data].Value;
+    }
 
+    public string getSerializedData()
+    {
+        return NodeToSerialize.ToString();
+    }
     public void addData(string where, string what)
     {
         NodeToSerialize[where] = what;
