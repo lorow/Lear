@@ -7,7 +7,7 @@ public class LRSystem : MonoBehaviour {
 
     public void Register()
     {
-
+        SceneManager.LoadScene(1);
     }
 
     public void Login()
