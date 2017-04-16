@@ -7,8 +7,7 @@ public class ScreenManagerHub : MonoBehaviour {
     public GameObject start;
     private void Start()
     {
-        turnOff(start);
-
+        changeScreen(start);
     }
 
     void turnOff(GameObject screenToLeave)

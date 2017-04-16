@@ -6,21 +6,27 @@ public class NetworkManager : MonoBehaviour {
     public JSONParser parser;
     public GeneralCreator GCreator;
     public string answear;
+    int i;
     public void Start()
     {
         login("test", "haslo");
     }
-
+    private void Update()
+    {
+        Debug.Log("i: " + i);
+    }
     public void postM(string data)
     {
         string acaddr = postaddres + data;
         Debug.Log(acaddr);
         StartCoroutine(postReq(acaddr));
     }
+
     private IEnumerator postReq(string addr)
     {
         WWW postName = new WWW(addr);
         yield return postName;
+        i++;
         answear = postName.text;
         Debug.Log("test" + postName.text);
     }
