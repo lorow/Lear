@@ -558,7 +558,7 @@ namespace UnityStandardAssets.CinematicEffects
                 Vector3 hsv;
                 Color.RGBToHSV(color, out hsv.x, out hsv.y, out hsv.z);
 
-                // Retina/HDPI screens handling
+                // Retina/HDPI allScreens handling
                 wheelDrawArea.width /= pixelRatio;
                 wheelDrawArea.height /= pixelRatio;
                 float scaledRadius = radius / pixelRatio;

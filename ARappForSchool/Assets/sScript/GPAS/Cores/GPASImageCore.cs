@@ -2,7 +2,8 @@
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class GPASImageCore : MonoBehaviour {
+public class GPASImageCore : MonoBehaviour
+{
 
     public void lerpColor(Image desiredImage, Color to, float duration = 1)
     {
@@ -14,7 +15,7 @@ public class GPASImageCore : MonoBehaviour {
         }
 
     }
-    public void colorFade(Image desiredImage,int alpha, float duration = 1)
+    public void colorFade(Image desiredImage, int alpha, float duration = 1)
     {
         if (desiredImage == null)
             Debug.LogError("desired image is null, please fix this");
@@ -31,7 +32,7 @@ public class GPASImageCore : MonoBehaviour {
         }
 
     }
-    public void move(Transform objectTransform ,Vector3 destination, float speed = 1, bool snapping = false)
+    public void move(Transform objectTransform, Vector3 destination, float speed = 1, bool snapping = false)
     {
         if (objectTransform == null || destination == null)
             Debug.LogError("One of the following : object transform or destination vector, or both of them are null, fix this before anything");
@@ -97,5 +98,13 @@ public class GPASImageCore : MonoBehaviour {
         {
             imageObject.texture = desiredImage;
         }
+    }
+    public void lerpShadow()
+    {
+
+    }
+    public void lerpShadowPosition()
+    {
+
     }
 }

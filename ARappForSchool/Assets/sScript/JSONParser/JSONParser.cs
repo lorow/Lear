@@ -31,9 +31,9 @@ using SimpleJSON;
 
 public class JSONParser : MonoBehaviour {
 
-    public string JsonContent = "{}";
+    public string JsonContent { get;set; }
+    public JSONNode NodeToSerialize { get; set; }
     private JSONNode JSONParsed;
-    public JSONNode NodeToSerialize;
 
     private string initialJson = "{}";
 
