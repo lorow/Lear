@@ -15525,6 +15525,7 @@ MonoBehaviour:
   newsContent: {fileID: 0}
   clickCounter: 0
   size: 1100
+  dotColor: {r: 0.27058825, g: 0.75686276, b: 1, a: 1}
   GPASManager: {fileID: 1030735507}
 --- !u!1 &1285754372
 GameObject:
@@ -20654,7 +20655,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -0.00033569336, y: 0.000061035156}
+  m_AnchoredPosition: {x: -0.00033569336, y: 0}
   m_SizeDelta: {x: 0, y: 408}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1832161664
@@ -22380,7 +22381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 1832161663}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 0
   m_MovementType: 2
   m_Elasticity: 0.05

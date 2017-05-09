@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿    using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -17,6 +17,8 @@ public class HomeScreenManager : MonoBehaviour
     int clickCounter = 0;
     [SerializeField]
     float size = 1050;
+    [SerializeField]
+    Color dotColor;
 #endregion
     [Space]
 #region newsVars
@@ -52,7 +54,7 @@ public class HomeScreenManager : MonoBehaviour
         {
             MoveContent(decOrInc, courseContent.transform);
         }
-        handleDots(clickCounter);
+        HandleDots(clickCounter);
     }
 
     void MoveContent(int direction, Transform transform)
@@ -94,14 +96,14 @@ public class HomeScreenManager : MonoBehaviour
             clickCounter--;
     }
 
-    void handleDots(int whichDot)
+    void HandleDots(int whichDot)
     {
         TurnWhite(dots.Length);
         Colorize(whichDot);
     }
     void Colorize(int which)
     {
-            GPASManager.ImageCore.lerpColor(dots[which].GetComponent<Image>(), new Color(0,149,255));
+            GPASManager.ImageCore.lerpColor(dots[which].GetComponent<Image>(), dotColor);
     }
     void TurnWhite(int size)
     {
@@ -112,6 +114,38 @@ public class HomeScreenManager : MonoBehaviour
 
 #region news
     void HandleNews()
+    {
+
+    }
+    void SwapPositions()
+    {
+
+    }
+    void UpdateContent()
+    {
+
+    }
+    #endregion
+
+#region json module 
+    enum requestType
+    {
+        none,
+        updateCourses,
+        updateNews
+    };
+    requestType req = requestType.none;
+    #endregion
+#region gesture controller
+    void HandelGestures()
+    {
+
+    }
+    void PullDownGesture()
+    {
+
+    }
+    void HoldGesture()
     {
 
     }
