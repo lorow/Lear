@@ -1,10 +1,14 @@
-﻿    using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
-public class HomeScreenManager : MonoBehaviour
-{
-#region courseVars
+[RequireComponent(typeof(NetworkManager))]
+
+public class RecentCoursesManager : BaseController {
+
+    HomeScreenManager homeScreen;
+
     [SerializeField]
     GameObject[] courseButtons;
     [SerializeField]
@@ -12,29 +16,28 @@ public class HomeScreenManager : MonoBehaviour
     [SerializeField]
     GameObject courseContent;
     [SerializeField]
-    GameObject newsContent;
-    [SerializeField]
     int clickCounter = 0;
     [SerializeField]
     float size = 1050;
     [SerializeField]
     Color dotColor;
-#endregion
+
     [Space]
-#region newsVars
-    [Space]
-#endregion
+
     [SerializeField]
     GPASCoreManager GPASManager;
 
+    [SerializeField]
+    SingleCourseManager[] scmanagers;
+
+    NetworkManager networkManager;
+
     private void Awake()
     {
-        HandleRecentCourses();
-        HandleNews();
+        networkManager = gameObject.GetComponent<NetworkManager>();
     }
 
-    #region recent courses
-    void HandleRecentCourses()
+    public void HandleRecentCourses()
     {
         HandleButtons();
     }
@@ -63,7 +66,7 @@ public class HomeScreenManager : MonoBehaviour
         Vector3 newPos = Vector3.zero;
         if (direction == 0)
         {
-            if(clickCounter > 0)
+            if (clickCounter > 0)
             {
                 DecCounter();
                 newPos = new Vector3(transform.position.x + size, transform.position.y, transform.position.z);
@@ -103,51 +106,35 @@ public class HomeScreenManager : MonoBehaviour
     }
     void Colorize(int which)
     {
-            GPASManager.ImageCore.lerpColor(dots[which].GetComponent<Image>(), dotColor);
+        GPASManager.ImageCore.lerpColor(dots[which].GetComponent<Image>(), dotColor);
     }
     void TurnWhite(int size)
     {
         for (int i = 0; i < size; i++)
             GPASManager.ImageCore.lerpColor(dots[i].GetComponent<Image>(), Color.white);
     }
-#endregion
 
-#region news
-    void HandleNews()
+    public override void updateContent(JSONParser parser)
     {
-
+        Debug.Log("updating Curses");
     }
-    void SwapPositions()
+    
+    string prepareRequest(int index)
     {
-
+        string req = " { \"type\" : \" courseImageReq \", " +
+            "\"index\" : "  + index + "}";
+        return req;
     }
-    void UpdateContent()
-    {
 
+    void prepareCourses(JSONParser pars)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            //assuming that returned messange will be a link to an image
+            networkManager.postMessange(homeScreen.addres,prepareRequest(i));
+            pars.getDataAsString(networkManager.answear);
+
+        }
     }
-    #endregion
 
-#region json module 
-    enum requestType
-    {
-        none,
-        updateCourses,
-        updateNews
-    };
-    requestType req = requestType.none;
-    #endregion
-#region gesture controller
-    void HandelGestures()
-    {
-
-    }
-    void PullDownGesture()
-    {
-
-    }
-    void HoldGesture()
-    {
-
-    }
-#endregion
 }
