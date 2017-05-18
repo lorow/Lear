@@ -35,6 +35,7 @@ public class RecentCoursesManager : BaseController {
     private void Awake()
     {
         networkManager = gameObject.GetComponent<NetworkManager>();
+        HandleRecentCourses();
     }
 
     public void HandleRecentCourses()
